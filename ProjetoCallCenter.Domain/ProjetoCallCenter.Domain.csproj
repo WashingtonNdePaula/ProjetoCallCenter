@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6B18105A-07CB-4B8D-98D7-A564FB2D2BDF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProjetoCallCenter.Domain</RootNamespace>
+    <AssemblyName>ProjetoCallCenter.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\Atendimento.cs" />
+    <Compile Include="Entities\Credencial.cs" />
+    <Compile Include="Entities\Credor.cs" />
+    <Compile Include="Entities\Devedor.cs" />
+    <Compile Include="Entities\Divida.cs" />
+    <Compile Include="Entities\Endereco.cs" />
+    <Compile Include="Entities\Log.cs" />
+    <Compile Include="Entities\Negociacao.cs" />
+    <Compile Include="Entities\OpcaoNegociacao.cs" />
+    <Compile Include="Entities\Parcela.cs" />
+    <Compile Include="Entities\PerfilNegociacao.cs" />
+    <Compile Include="Entities\Segmentacao.cs" />
+    <Compile Include="Entities\Status.cs" />
+    <Compile Include="Entities\Telefone.cs" />
+    <Compile Include="Entities\TipoCredencial.cs" />
+    <Compile Include="Entities\Usuario.cs" />
+    <Compile Include="Interfaces\Repositories\ICredencialRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ICredorRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IPerfilNegociacaoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IRepositoryBase.cs" />
+    <Compile Include="Interfaces\Repositories\ISegmentacaoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IStatusRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ITipoCredencialRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IUsuarioRepository.cs" />
+    <Compile Include="Interfaces\Services\ICredencialService.cs" />
+    <Compile Include="Interfaces\Services\ICredorService.cs" />
+    <Compile Include="Interfaces\Services\IPerfilNegociacaoService.cs" />
+    <Compile Include="Interfaces\Services\ISegmentacaoService.cs" />
+    <Compile Include="Interfaces\Services\IServiceBase.cs" />
+    <Compile Include="Interfaces\Services\IStatusService.cs" />
+    <Compile Include="Interfaces\Services\ITipoCredencialService.cs" />
+    <Compile Include="Interfaces\Services\IUsuarioService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CredencialService.cs" />
+    <Compile Include="Services\CredorService.cs" />
+    <Compile Include="Services\PerfilNegociacaoService.cs" />
+    <Compile Include="Services\SegmentacaoService.cs" />
+    <Compile Include="Services\ServiceBase.cs" />
+    <Compile Include="Services\StatusService.cs" />
+    <Compile Include="Services\TipoCredencialService.cs" />
+    <Compile Include="Services\UsuarioService.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

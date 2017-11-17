@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - CallCenter MVC DDD</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <link href="~/Content/mystyle.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("CallCenter", "", "", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">Home</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Cadastro <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Usuários", "Index", "Usuario")</li>
+                                <li>@Html.ActionLink("Credores", "Index", "Credor")</li>
+                                <li>@Html.ActionLink("Perfil de Negociação", "Index", "PerfilNegociacao")</li>
+                                <li>@Html.ActionLink("Segmentação para Atendimento", "Index", "Segmentacao")</li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Atendimento</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Negociação <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Dar Baixa Manualmente", "Index", "Home")</li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Relatório <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Usuários", "Usuario", "Relatorio")</li>
+                                <li>@Html.ActionLink("Credores", "Credor", "Relatorio")</li>
+                                <li>@Html.ActionLink("Perfil de Negociação", "PerfilNegociacao", "Relatorio")</li>
+                                <li>@Html.ActionLink("Segmentação para Atendimento", "PerfilSegmentacao", "Relatorio")</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Sair</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    @RenderBody()
+    @RenderSection("scripts", required: false)
+    @Html.Partial("_Mensagens")
+
+</body>
+</html>

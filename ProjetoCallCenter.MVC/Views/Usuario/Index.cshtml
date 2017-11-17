@@ -1,0 +1,49 @@
+﻿@model IEnumerable<ProjetoCallCenter.MVC.ViewModels.UsuarioViewModel>
+
+@{
+    ViewBag.Title = "Usuários";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Criar novo", "Create")
+</p>
+<table class="table table-striped table-bordered">
+    <tr>
+        <th class="col-md-3">
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th class="col-md-3">
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th class="col-md-1">Tipo</th>
+        <th class="col-md-1">Status</th>
+        <th class="col-md-2">Ações</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Credencial.TipoCredencial.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Credencial.Status.Descricao)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.UsuarioId }) |
+                @Html.ActionLink("Detalhes", "Details", new { id = item.UsuarioId }) |
+                @Html.ActionLink("Excluir", "Delete", new { id = item.UsuarioId })
+            </td>
+        </tr>
+    }
+
+</table>

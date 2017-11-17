@@ -1,0 +1,37 @@
+﻿@model ProjetoCallCenter.MVC.ViewModels.SegmentacaoViewModel
+
+<div class="form-group">
+    <div class="col-md-offset-1 col-md-5">
+        @Html.LabelFor(model => model.UsuarioId, htmlAttributes: new { @class = "control-label" })
+        @Html.DropDownListFor(model => model.UsuarioId, (SelectList)ViewBag.ListaUsuarios, htmlAttributes: new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.UsuarioId, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-5">
+        @Html.LabelFor(model => model.CredorId, htmlAttributes: new { @class = "control-label" })
+        @Html.DropDownListFor(model => model.CredorId, (SelectList)ViewBag.ListaCredores, htmlAttributes: new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.CredorId, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="col-md-offset-1 col-md-2">
+        @Html.LabelFor(model => model.DiaEmAtrasoDe, htmlAttributes: new { @class = "control-label" })
+        @Html.EditorFor(model => model.DiaEmAtrasoDe, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.DiaEmAtrasoDe, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-2">
+        @Html.LabelFor(model => model.DiaEmAtrasoAte, htmlAttributes: new { @class = "control-label" })
+        @Html.EditorFor(model => model.DiaEmAtrasoAte, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.DiaEmAtrasoAte, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-3">
+        @Html.LabelFor(model => model.ValorDividaDe, htmlAttributes: new { @class = "control-label" })
+        @Html.EditorFor(model => model.ValorDividaDe, new { htmlAttributes = new { @class = "money form-control" } })
+        @Html.ValidationMessageFor(model => model.ValorDividaDe, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-3">
+        @Html.LabelFor(model => model.ValorDividaAte, htmlAttributes: new { @class = "control-label" })
+        @Html.EditorFor(model => model.ValorDividaAte, new { htmlAttributes = new { @class = "money form-control" } })
+        @Html.ValidationMessageFor(model => model.ValorDividaAte, "", new { @class = "text-danger" })
+    </div>
+</div>

@@ -1,0 +1,43 @@
+﻿@model ProjetoCallCenter.MVC.ViewModels.UsuarioViewModel
+
+@{
+    ViewBag.Title = "Detalhes do Usuário";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            Tipo
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Credencial.TipoCredencial.Descricao)
+        </dd>
+        <dt>
+            Status
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Credencial.Status.Descricao)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.UsuarioId }) |
+    @Html.ActionLink("Voltar à lista", "Index")
+</p>

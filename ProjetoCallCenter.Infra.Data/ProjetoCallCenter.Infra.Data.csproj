@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{778D7D38-933B-43C2-9BF6-C9C563A2AE13}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProjetoCallCenter.Infra.Data</RootNamespace>
+    <AssemblyName>ProjetoCallCenter.Infra.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Context\DBProjetoCallCenter.cs" />
+    <Compile Include="EntityConfig\AtendimentoConfiguration.cs" />
+    <Compile Include="EntityConfig\CredencialConfiguration.cs" />
+    <Compile Include="EntityConfig\CredorConfiguration.cs" />
+    <Compile Include="EntityConfig\DevedorConfiguration.cs" />
+    <Compile Include="EntityConfig\DividaConfiguration.cs" />
+    <Compile Include="EntityConfig\LogConfiguration.cs" />
+    <Compile Include="EntityConfig\NegociacaoConfiguration.cs" />
+    <Compile Include="EntityConfig\ParcelaConfiguration.cs" />
+    <Compile Include="EntityConfig\PerfilNegociacaoConfiguration.cs" />
+    <Compile Include="EntityConfig\SegmentacaoConfiguration.cs" />
+    <Compile Include="EntityConfig\StatusConfiguration.cs" />
+    <Compile Include="EntityConfig\TelefoneConfiguration.cs" />
+    <Compile Include="EntityConfig\TipoCredencialConfiguration.cs" />
+    <Compile Include="EntityConfig\UsuarioConfiguration.cs" />
+    <Compile Include="Migrations\201707120211277_CodeFirst.cs" />
+    <Compile Include="Migrations\201707120211277_CodeFirst.Designer.cs">
+      <DependentUpon>201707120211277_CodeFirst.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\CredencialRepository.cs" />
+    <Compile Include="Repositories\CredorRepository.cs" />
+    <Compile Include="Repositories\PerfilNegociacaoRepository.cs" />
+    <Compile Include="Repositories\RepositoryBase.cs" />
+    <Compile Include="Repositories\SegmentacaoRepository.cs" />
+    <Compile Include="Repositories\StatusRepository.cs" />
+    <Compile Include="Repositories\TipoCredencialRepository.cs" />
+    <Compile Include="Repositories\UsuarioRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProjetoCallCenter.Domain\ProjetoCallCenter.Domain.csproj">
+      <Project>{6B18105A-07CB-4B8D-98D7-A564FB2D2BDF}</Project>
+      <Name>ProjetoCallCenter.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201707120211277_CodeFirst.resx">
+      <DependentUpon>201707120211277_CodeFirst.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
